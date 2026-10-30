@@ -19,7 +19,6 @@ namespace Soenneker.Incident.OpenApiClient.V2.Follow_ups.Item
     public partial class Follow_upsItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The actions property</summary>
-        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V2.Follow_ups.Item.Actions.ActionsRequestBuilder Actions
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Follow_ups.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);

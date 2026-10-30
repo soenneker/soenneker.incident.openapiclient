@@ -37,6 +37,7 @@ namespace Soenneker.Incident.OpenApiClient.V1
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The actions property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V1.Actions.ActionsRequestBuilder Actions
         {
             get => new global::Soenneker.Incident.OpenApiClient.V1.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
@@ -57,6 +58,7 @@ namespace Soenneker.Incident.OpenApiClient.V1
             get => new global::Soenneker.Incident.OpenApiClient.V1.Custom_field_options.Custom_field_optionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_fields property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V1.Custom_fields.Custom_fieldsRequestBuilder Custom_fields
         {
             get => new global::Soenneker.Incident.OpenApiClient.V1.Custom_fields.Custom_fieldsRequestBuilder(PathParameters, RequestAdapter);
@@ -82,6 +84,7 @@ namespace Soenneker.Incident.OpenApiClient.V1
             get => new global::Soenneker.Incident.OpenApiClient.V1.Incident_relationships.Incident_relationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The incident_roles property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V1.Incident_roles.Incident_rolesRequestBuilder Incident_roles
         {
             get => new global::Soenneker.Incident.OpenApiClient.V1.Incident_roles.Incident_rolesRequestBuilder(PathParameters, RequestAdapter);
@@ -107,6 +110,7 @@ namespace Soenneker.Incident.OpenApiClient.V1
             get => new global::Soenneker.Incident.OpenApiClient.V1.Incident_types.Incident_typesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The incidents property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V1.Incidents.IncidentsRequestBuilder Incidents
         {
             get => new global::Soenneker.Incident.OpenApiClient.V1.Incidents.IncidentsRequestBuilder(PathParameters, RequestAdapter);

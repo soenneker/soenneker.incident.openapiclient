@@ -19,7 +19,6 @@ namespace Soenneker.Incident.OpenApiClient.V2.Catalog_types.Item
     public partial class Catalog_typesItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The actions property</summary>
-        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V2.Catalog_types.Item.Actions.ActionsRequestBuilder Actions
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Catalog_types.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);

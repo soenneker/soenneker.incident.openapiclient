@@ -16,6 +16,7 @@ namespace Soenneker.Incident.OpenApiClient.V2.Follow_ups.Item.Actions
     public partial class ActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The connect_external_issue property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V2.Follow_ups.Item.Actions.Connect_external_issue.Connect_external_issueRequestBuilder Connect_external_issue
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Follow_ups.Item.Actions.Connect_external_issue.Connect_external_issueRequestBuilder(PathParameters, RequestAdapter);

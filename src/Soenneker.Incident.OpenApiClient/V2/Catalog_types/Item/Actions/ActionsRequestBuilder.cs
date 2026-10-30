@@ -16,6 +16,7 @@ namespace Soenneker.Incident.OpenApiClient.V2.Catalog_types.Item.Actions
     public partial class ActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The update_schema property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V2.Catalog_types.Item.Actions.Update_schema.Update_schemaRequestBuilder Update_schema
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Catalog_types.Item.Actions.Update_schema.Update_schemaRequestBuilder(PathParameters, RequestAdapter);

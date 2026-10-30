@@ -70,6 +70,7 @@ namespace Soenneker.Incident.OpenApiClient.V2
     public partial class V2RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The actions property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V2.Actions.ActionsRequestBuilder Actions
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
@@ -135,16 +136,19 @@ namespace Soenneker.Incident.OpenApiClient.V2
             get => new global::Soenneker.Incident.OpenApiClient.V2.Call_transcript_entries.Call_transcript_entriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The catalog_entries property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V2.Catalog_entries.Catalog_entriesRequestBuilder Catalog_entries
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Catalog_entries.Catalog_entriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The catalog_resources property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V2.Catalog_resources.Catalog_resourcesRequestBuilder Catalog_resources
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Catalog_resources.Catalog_resourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The catalog_types property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V2.Catalog_types.Catalog_typesRequestBuilder Catalog_types
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Catalog_types.Catalog_typesRequestBuilder(PathParameters, RequestAdapter);
@@ -170,6 +174,7 @@ namespace Soenneker.Incident.OpenApiClient.V2
             get => new global::Soenneker.Incident.OpenApiClient.V2.Escalations.EscalationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The follow_ups property</summary>
+        [Obsolete("")]
         public global::Soenneker.Incident.OpenApiClient.V2.Follow_ups.Follow_upsRequestBuilder Follow_ups
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Follow_ups.Follow_upsRequestBuilder(PathParameters, RequestAdapter);
