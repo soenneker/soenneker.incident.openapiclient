@@ -30,6 +30,14 @@ namespace Soenneker.Incident.OpenApiClient.Models
 #else
         public global::Soenneker.Incident.OpenApiClient.Models.CatalogUpdateEntryPayloadV3_attribute_values AttributeValues { get; set; }
 #endif
+        /// <summary>Aliases your organisation has added to an entry of a catalog type that incident.io syncs, such as a schedule or escalation path, which you can&apos;t change aliases on directly. Syncs keep them, and they are also listed in aliases. When you update an entry, omit this or send null to keep its current custom aliases, send an empty list to clear them, or send a list to replace them.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CustomAliases { get; set; }
+#nullable restore
+#else
+        public List<string> CustomAliases { get; set; }
+#endif
         /// <summary>An optional alternative ID for this entry, which is ensured to be unique for the type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +91,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
             {
                 { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "attribute_values", n => { AttributeValues = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.CatalogUpdateEntryPayloadV3_attribute_values>(global::Soenneker.Incident.OpenApiClient.Models.CatalogUpdateEntryPayloadV3_attribute_values.CreateFromDiscriminatorValue); } },
+                { "custom_aliases", n => { CustomAliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "rank", n => { Rank = n.GetIntValue(); } },
@@ -98,6 +107,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.CatalogUpdateEntryPayloadV3_attribute_values>("attribute_values", AttributeValues);
+            writer.WriteCollectionOfPrimitiveValues<string>("custom_aliases", CustomAliases);
             writer.WriteStringValue("external_id", ExternalId);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("rank", Rank);

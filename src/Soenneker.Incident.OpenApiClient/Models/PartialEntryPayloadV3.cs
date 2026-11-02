@@ -31,6 +31,14 @@ namespace Soenneker.Incident.OpenApiClient.Models
 #else
         public global::Soenneker.Incident.OpenApiClient.Models.PartialEntryPayloadV3_attribute_values AttributeValues { get; set; }
 #endif
+        /// <summary>Aliases your organisation adds to an entry of a catalog type that incident.io syncs, such as a schedule or escalation path, which you can&apos;t change aliases on directly. Omit this or send null to keep the entry&apos;s current custom aliases, send an empty list to clear them, or send a list to replace them. Only available on catalog types where supports_custom_aliases is true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CustomAliases { get; set; }
+#nullable restore
+#else
+        public List<string> CustomAliases { get; set; }
+#endif
         /// <summary>ID of the relevant catalog entry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +63,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>If specified, will update the rank of the entry. When omitted, rank will be set to null (allowing rank removal).</summary>
+        /// <summary>If specified, will update the rank of the entry. When omitted, rank will be set to null (allowing rank removal), unless incident.io syncs the catalog type, in which case the existing rank is preserved.</summary>
         public int? Rank { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.PartialEntryPayloadV3"/> and sets the default values.
@@ -84,6 +92,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
             {
                 { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "attribute_values", n => { AttributeValues = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PartialEntryPayloadV3_attribute_values>(global::Soenneker.Incident.OpenApiClient.Models.PartialEntryPayloadV3_attribute_values.CreateFromDiscriminatorValue); } },
+                { "custom_aliases", n => { CustomAliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "entry_id", n => { EntryId = n.GetStringValue(); } },
                 { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -99,6 +108,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PartialEntryPayloadV3_attribute_values>("attribute_values", AttributeValues);
+            writer.WriteCollectionOfPrimitiveValues<string>("custom_aliases", CustomAliases);
             writer.WriteStringValue("entry_id", EntryId);
             writer.WriteStringValue("external_id", ExternalId);
             writer.WriteStringValue("name", Name);
