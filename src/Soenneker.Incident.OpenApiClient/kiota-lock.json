@@ -2,7 +2,7 @@
   "descriptionHash": "D3556922C6C7BCB9DFAB8CBC36BFAA1E7F14DFBF02241F408C970F6CDE92808049F28C9B0C61A6A2ABC082C9330663E554C53D9B8ED743FA24AC410518943D74",
   "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.37.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "IncidentOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Incident.OpenApiClient",
