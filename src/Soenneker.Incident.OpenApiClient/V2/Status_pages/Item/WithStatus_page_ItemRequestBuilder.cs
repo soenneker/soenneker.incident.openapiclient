@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Incident.OpenApiClient.Models;
 using Soenneker.Incident.OpenApiClient.V2.Status_pages.Item.Components;
+using Soenneker.Incident.OpenApiClient.V2.Status_pages.Item.Customers;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Soenneker.Incident.OpenApiClient.V2.Status_pages.Item
         public global::Soenneker.Incident.OpenApiClient.V2.Status_pages.Item.Components.ComponentsRequestBuilder Components
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Status_pages.Item.Components.ComponentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The customers property</summary>
+        public global::Soenneker.Incident.OpenApiClient.V2.Status_pages.Item.Customers.CustomersRequestBuilder Customers
+        {
+            get => new global::Soenneker.Incident.OpenApiClient.V2.Status_pages.Item.Customers.CustomersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.V2.Status_pages.Item.WithStatus_page_ItemRequestBuilder"/> and sets the default values.
