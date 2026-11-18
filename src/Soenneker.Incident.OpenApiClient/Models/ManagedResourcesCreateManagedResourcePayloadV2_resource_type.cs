@@ -11,6 +11,10 @@ namespace Soenneker.Incident.OpenApiClient.Models
         #pragma warning disable CS1591
         Alert_route,
         #pragma warning restore CS1591
+        [EnumMember(Value = "alert_rule")]
+        #pragma warning disable CS1591
+        Alert_rule,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alert_source")]
         #pragma warning disable CS1591
         Alert_source,
