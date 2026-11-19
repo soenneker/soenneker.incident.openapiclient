@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Incident.OpenApiClient.Models;
+using Soenneker.Incident.OpenApiClient.V2.Users.Item.Actions;
 using Soenneker.Incident.OpenApiClient.V2.Users.Item.Notification_methods;
 using Soenneker.Incident.OpenApiClient.V2.Users.Item.Notification_rules;
 using Soenneker.Incident.OpenApiClient.V2.Users.Item.Paging_provider;
@@ -20,6 +21,11 @@ namespace Soenneker.Incident.OpenApiClient.V2.Users.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The actions property</summary>
+        public global::Soenneker.Incident.OpenApiClient.V2.Users.Item.Actions.ActionsRequestBuilder Actions
+        {
+            get => new global::Soenneker.Incident.OpenApiClient.V2.Users.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The notification_methods property</summary>
         public global::Soenneker.Incident.OpenApiClient.V2.Users.Item.Notification_methods.Notification_methodsRequestBuilder Notification_methods
         {
