@@ -27,6 +27,7 @@ using Soenneker.Incident.OpenApiClient.V2.Glossary_entries;
 using Soenneker.Incident.OpenApiClient.V2.Heartbeat;
 using Soenneker.Incident.OpenApiClient.V2.Incident_activity_log_entries;
 using Soenneker.Incident.OpenApiClient.V2.Incident_alerts;
+using Soenneker.Incident.OpenApiClient.V2.Incident_participant_workload_hours;
 using Soenneker.Incident.OpenApiClient.V2.Incident_participant_workloads;
 using Soenneker.Incident.OpenApiClient.V2.Incident_participants;
 using Soenneker.Incident.OpenApiClient.V2.Incident_roles;
@@ -198,6 +199,11 @@ namespace Soenneker.Incident.OpenApiClient.V2
         public global::Soenneker.Incident.OpenApiClient.V2.Incident_alerts.Incident_alertsRequestBuilder Incident_alerts
         {
             get => new global::Soenneker.Incident.OpenApiClient.V2.Incident_alerts.Incident_alertsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The incident_participant_workload_hours property</summary>
+        public global::Soenneker.Incident.OpenApiClient.V2.Incident_participant_workload_hours.Incident_participant_workload_hoursRequestBuilder Incident_participant_workload_hours
+        {
+            get => new global::Soenneker.Incident.OpenApiClient.V2.Incident_participant_workload_hours.Incident_participant_workload_hoursRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The incident_participant_workloads property</summary>
         public global::Soenneker.Incident.OpenApiClient.V2.Incident_participant_workloads.Incident_participant_workloadsRequestBuilder Incident_participant_workloads

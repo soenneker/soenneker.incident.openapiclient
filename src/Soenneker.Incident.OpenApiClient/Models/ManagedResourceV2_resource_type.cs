@@ -8,6 +8,18 @@ namespace Soenneker.Incident.OpenApiClient.Models
     public enum ManagedResourceV2_resource_type
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "access_grant")]
+        #pragma warning disable CS1591
+        Access_grant,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "access_group")]
+        #pragma warning disable CS1591
+        Access_group,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alert_grouping_preference")]
+        #pragma warning disable CS1591
+        Alert_grouping_preference,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alert_route")]
         #pragma warning disable CS1591
         Alert_route,

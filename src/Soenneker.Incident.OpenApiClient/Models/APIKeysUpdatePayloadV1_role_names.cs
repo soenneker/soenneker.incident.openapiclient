@@ -204,5 +204,9 @@ namespace Soenneker.Incident.OpenApiClient.Models
         #pragma warning disable CS1591
         Users_viewer,
         #pragma warning restore CS1591
+        [EnumMember(Value = "access_control_manage")]
+        #pragma warning disable CS1591
+        Access_control_manage,
+        #pragma warning restore CS1591
     }
 }
