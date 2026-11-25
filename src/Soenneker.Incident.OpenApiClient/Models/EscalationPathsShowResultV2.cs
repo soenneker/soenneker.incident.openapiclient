@@ -7,30 +7,37 @@ using System.IO;
 using System;
 namespace Soenneker.Incident.OpenApiClient.Models
 {
-    /// <summary>
-    /// For a templated path, the values to bind to the template&apos;s declared parameters, keyed by parameter name.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EscalationsCreatePathPayloadV2_param_bindings : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class EscalationPathsShowResultV2 : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The escalation_path property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Incident.OpenApiClient.Models.EscalationPathV2? EscalationPath { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Incident.OpenApiClient.Models.EscalationPathV2 EscalationPath { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathPayloadV2_param_bindings"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsShowResultV2"/> and sets the default values.
         /// </summary>
-        public EscalationsCreatePathPayloadV2_param_bindings()
+        public EscalationPathsShowResultV2()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathPayloadV2_param_bindings"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsShowResultV2"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathPayloadV2_param_bindings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsShowResultV2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathPayloadV2_param_bindings();
+            return new global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsShowResultV2();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,6 +47,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "escalation_path", n => { EscalationPath = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathV2>(global::Soenneker.Incident.OpenApiClient.Models.EscalationPathV2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,6 +57,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathV2>("escalation_path", EscalationPath);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

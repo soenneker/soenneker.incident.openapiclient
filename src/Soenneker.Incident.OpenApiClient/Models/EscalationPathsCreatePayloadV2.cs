@@ -9,13 +9,13 @@ namespace Soenneker.Incident.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class EscalationsUpdatePathPayloadV2 : IAdditionalDataHolder, IParsable
+    public partial class EscalationPathsCreatePayloadV2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this path carries its own nodes, or is built from an escalation path template.</summary>
-        public global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2_kind? Kind { get; set; }
+        public global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2_kind? Kind { get; set; }
         /// <summary>The name of this escalation path, for the user&apos;s reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,10 +27,10 @@ namespace Soenneker.Incident.OpenApiClient.Models
         /// <summary>For a templated path, the values to bind to the template&apos;s declared parameters, keyed by parameter name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2_param_bindings? ParamBindings { get; set; }
+        public global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2_param_bindings? ParamBindings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2_param_bindings ParamBindings { get; set; }
+        public global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2_param_bindings ParamBindings { get; set; }
 #endif
         /// <summary>The nodes that form the levels and branches of this escalation path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,21 +73,21 @@ namespace Soenneker.Incident.OpenApiClient.Models
         public List<global::Soenneker.Incident.OpenApiClient.Models.WeekdayIntervalConfigV2> WorkingHours { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2"/> and sets the default values.
         /// </summary>
-        public EscalationsUpdatePathPayloadV2()
+        public EscalationPathsCreatePayloadV2()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2();
+            return new global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,9 +97,9 @@ namespace Soenneker.Incident.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2_kind>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "param_bindings", n => { ParamBindings = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2_param_bindings>(global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2_param_bindings.CreateFromDiscriminatorValue); } },
+                { "param_bindings", n => { ParamBindings = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2_param_bindings>(global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2_param_bindings.CreateFromDiscriminatorValue); } },
                 { "path", n => { Path = n.GetCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathNodePayloadV2>(global::Soenneker.Incident.OpenApiClient.Models.EscalationPathNodePayloadV2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "repeat_config", n => { RepeatConfig = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathRepeatConfigV2>(global::Soenneker.Incident.OpenApiClient.Models.EscalationPathRepeatConfigV2.CreateFromDiscriminatorValue); } },
                 { "team_ids", n => { TeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -114,9 +114,9 @@ namespace Soenneker.Incident.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2_kind>("kind", Kind);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationsUpdatePathPayloadV2_param_bindings>("param_bindings", ParamBindings);
+            writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2_param_bindings>("param_bindings", ParamBindings);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathNodePayloadV2>("path", Path);
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathRepeatConfigV2>("repeat_config", RepeatConfig);
             writer.WriteCollectionOfPrimitiveValues<string>("team_ids", TeamIds);

@@ -9,7 +9,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class EscalationsListPathsResultV2 : IAdditionalDataHolder, IParsable
+    public partial class EscalationPathsListResultV2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,21 +31,21 @@ namespace Soenneker.Incident.OpenApiClient.Models
         public global::Soenneker.Incident.OpenApiClient.Models.PaginationMetaResultV2 PaginationMeta { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationsListPathsResultV2"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsListResultV2"/> and sets the default values.
         /// </summary>
-        public EscalationsListPathsResultV2()
+        public EscalationPathsListResultV2()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationsListPathsResultV2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsListResultV2"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Incident.OpenApiClient.Models.EscalationsListPathsResultV2 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsListResultV2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Incident.OpenApiClient.Models.EscalationsListPathsResultV2();
+            return new global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsListResultV2();
         }
         /// <summary>
         /// The deserialization information for the current model

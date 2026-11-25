@@ -76,6 +76,14 @@ namespace Soenneker.Incident.OpenApiClient.Models
         #pragma warning disable CS1591
         Status_page_component,
         #pragma warning restore CS1591
+        [EnumMember(Value = "status_page_component_property")]
+        #pragma warning disable CS1591
+        Status_page_component_property,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "status_page_component_property_option")]
+        #pragma warning disable CS1591
+        Status_page_component_property_option,
+        #pragma warning restore CS1591
         [EnumMember(Value = "status_page_structure")]
         #pragma warning disable CS1591
         Status_page_structure,

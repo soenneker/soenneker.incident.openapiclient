@@ -5,7 +5,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
 {
     /// <summary>Whether this path carries its own nodes, or is built from an escalation path template.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum EscalationsCreatePathPayloadV2_kind
+    public enum EscalationPathsUpdatePayloadV2_kind
     {
         [EnumMember(Value = "standalone")]
         #pragma warning disable CS1591

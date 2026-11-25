@@ -42,7 +42,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
 #endif
         /// <summary>Controls what type of entity this target identifies, such as EscalationPolicy or User</summary>
         public global::Soenneker.Incident.OpenApiClient.Models.EscalationPathTargetWithBindingV2_type? Type { get; set; }
-        /// <summary>The urgency of this escalation path target</summary>
+        /// <summary>The interruption level we notify this target at: high or low</summary>
         public global::Soenneker.Incident.OpenApiClient.Models.EscalationPathTargetWithBindingV2_urgency? Urgency { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationPathTargetWithBindingV2"/> and sets the default values.

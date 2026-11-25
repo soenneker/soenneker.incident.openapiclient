@@ -35,7 +35,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
 #endif
         /// <summary>Whether a call route target is a user or a schedule</summary>
         public global::Soenneker.Incident.OpenApiClient.Models.CallRouteTargetV2_type? Type { get; set; }
-        /// <summary>The urgency of this escalation path target</summary>
+        /// <summary>The interruption level we notify this target at: high or low</summary>
         public global::Soenneker.Incident.OpenApiClient.Models.CallRouteTargetV2_urgency? Urgency { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.CallRouteTargetV2"/> and sets the default values.

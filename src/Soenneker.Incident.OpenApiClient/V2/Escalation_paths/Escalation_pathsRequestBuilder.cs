@@ -49,7 +49,7 @@ namespace Soenneker.Incident.OpenApiClient.V2.Escalation_paths
         /// <summary>
         /// List all escalation paths in your account.An escalation path is a series of steps that describe how a page should be escalated,represented as a graph, supporting conditional branches based on alert priority andworking intervals.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationsListPathsResultV2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsListResultV2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Incident.OpenApiClient.Models.ErrorResponse">When receiving a 400 status code</exception>
@@ -67,11 +67,11 @@ namespace Soenneker.Incident.OpenApiClient.V2.Escalation_paths
         /// <exception cref="global::Soenneker.Incident.OpenApiClient.Models.ErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Incident.OpenApiClient.Models.EscalationsListPathsResultV2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Incident.OpenApiClient.V2.Escalation_paths.Escalation_pathsRequestBuilder.Escalation_pathsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsListResultV2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Incident.OpenApiClient.V2.Escalation_paths.Escalation_pathsRequestBuilder.Escalation_pathsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Incident.OpenApiClient.Models.EscalationsListPathsResultV2> GetAsync(Action<RequestConfiguration<global::Soenneker.Incident.OpenApiClient.V2.Escalation_paths.Escalation_pathsRequestBuilder.Escalation_pathsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsListResultV2> GetAsync(Action<RequestConfiguration<global::Soenneker.Incident.OpenApiClient.V2.Escalation_paths.Escalation_pathsRequestBuilder.Escalation_pathsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -91,12 +91,12 @@ namespace Soenneker.Incident.OpenApiClient.V2.Escalation_paths
                 { "429", global::Soenneker.Incident.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Incident.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Incident.OpenApiClient.Models.EscalationsListPathsResultV2>(requestInfo, global::Soenneker.Incident.OpenApiClient.Models.EscalationsListPathsResultV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsListResultV2>(requestInfo, global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsListResultV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an escalation path.An escalation path is a series of steps that describe how a page should be escalated,represented as graph, supporting conditional branches based on alert priority and workingintervals.We recommend you create escalation paths in the incident.io dashboard where our pathbuilder makes it easy to use conditions and visualise the path.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathResultV2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreateResultV2"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,11 +115,11 @@ namespace Soenneker.Incident.OpenApiClient.V2.Escalation_paths
         /// <exception cref="global::Soenneker.Incident.OpenApiClient.Models.ErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathResultV2?> PostAsync(global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathPayloadV2 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreateResultV2?> PostAsync(global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathResultV2> PostAsync(global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathPayloadV2 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreateResultV2> PostAsync(global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -140,7 +140,7 @@ namespace Soenneker.Incident.OpenApiClient.V2.Escalation_paths
                 { "429", global::Soenneker.Incident.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Incident.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathResultV2>(requestInfo, global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathResultV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreateResultV2>(requestInfo, global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreateResultV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all escalation paths in your account.An escalation path is a series of steps that describe how a page should be escalated,represented as a graph, supporting conditional branches based on alert priority andworking intervals.
@@ -169,11 +169,11 @@ namespace Soenneker.Incident.OpenApiClient.V2.Escalation_paths
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathPayloadV2 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Incident.OpenApiClient.Models.EscalationsCreatePathPayloadV2 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Incident.OpenApiClient.Models.EscalationPathsCreatePayloadV2 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
