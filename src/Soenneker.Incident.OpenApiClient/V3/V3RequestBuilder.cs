@@ -3,12 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Incident.OpenApiClient.V3.Actions;
+using Soenneker.Incident.OpenApiClient.V3.Alert_grouping_preferences;
 using Soenneker.Incident.OpenApiClient.V3.Alert_routes;
+using Soenneker.Incident.OpenApiClient.V3.Alert_rules;
 using Soenneker.Incident.OpenApiClient.V3.Catalog_entries;
 using Soenneker.Incident.OpenApiClient.V3.Catalog_resources;
 using Soenneker.Incident.OpenApiClient.V3.Catalog_types;
 using Soenneker.Incident.OpenApiClient.V3.Follow_ups;
 using Soenneker.Incident.OpenApiClient.V3.Incident_forms;
+using Soenneker.Incident.OpenApiClient.V3.Team_grouping_preferences;
 using Soenneker.Incident.OpenApiClient.V3.Teams;
 using System.Collections.Generic;
 using System.IO;
@@ -27,10 +30,20 @@ namespace Soenneker.Incident.OpenApiClient.V3
         {
             get => new global::Soenneker.Incident.OpenApiClient.V3.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The alert_grouping_preferences property</summary>
+        public global::Soenneker.Incident.OpenApiClient.V3.Alert_grouping_preferences.Alert_grouping_preferencesRequestBuilder Alert_grouping_preferences
+        {
+            get => new global::Soenneker.Incident.OpenApiClient.V3.Alert_grouping_preferences.Alert_grouping_preferencesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The alert_routes property</summary>
         public global::Soenneker.Incident.OpenApiClient.V3.Alert_routes.Alert_routesRequestBuilder Alert_routes
         {
             get => new global::Soenneker.Incident.OpenApiClient.V3.Alert_routes.Alert_routesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The alert_rules property</summary>
+        public global::Soenneker.Incident.OpenApiClient.V3.Alert_rules.Alert_rulesRequestBuilder Alert_rules
+        {
+            get => new global::Soenneker.Incident.OpenApiClient.V3.Alert_rules.Alert_rulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The catalog_entries property</summary>
         public global::Soenneker.Incident.OpenApiClient.V3.Catalog_entries.Catalog_entriesRequestBuilder Catalog_entries
@@ -56,6 +69,11 @@ namespace Soenneker.Incident.OpenApiClient.V3
         public global::Soenneker.Incident.OpenApiClient.V3.Incident_forms.Incident_formsRequestBuilder Incident_forms
         {
             get => new global::Soenneker.Incident.OpenApiClient.V3.Incident_forms.Incident_formsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The team_grouping_preferences property</summary>
+        public global::Soenneker.Incident.OpenApiClient.V3.Team_grouping_preferences.Team_grouping_preferencesRequestBuilder Team_grouping_preferences
+        {
+            get => new global::Soenneker.Incident.OpenApiClient.V3.Team_grouping_preferences.Team_grouping_preferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
         public global::Soenneker.Incident.OpenApiClient.V3.Teams.TeamsRequestBuilder Teams
