@@ -15,7 +15,15 @@ namespace Soenneker.Incident.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The high urgency rules the policy requires, and whether each was met</summary>
+        /// <summary>The high interruption level rules the policy requires, and whether each was met.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>? HighInterruptionLevel { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2> HighInterruptionLevel { get; set; }
+#endif
+        /// <summary>Deprecated: use high_interruption_level, which always has the same value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>? HighUrgency { get; set; }
@@ -23,7 +31,15 @@ namespace Soenneker.Incident.OpenApiClient.Models
 #else
         public List<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2> HighUrgency { get; set; }
 #endif
-        /// <summary>The low urgency rules the policy requires, and whether each was met</summary>
+        /// <summary>The low interruption level rules the policy requires, and whether each was met.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>? LowInterruptionLevel { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2> LowInterruptionLevel { get; set; }
+#endif
+        /// <summary>Deprecated: use low_interruption_level, which always has the same value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>? LowUrgency { get; set; }
@@ -64,7 +80,9 @@ namespace Soenneker.Incident.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "high_interruption_level", n => { HighInterruptionLevel = n.GetCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>(global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "high_urgency", n => { HighUrgency = n.GetCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>(global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "low_interruption_level", n => { LowInterruptionLevel = n.GetCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>(global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "low_urgency", n => { LowUrgency = n.GetCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>(global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -76,7 +94,9 @@ namespace Soenneker.Incident.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>("high_interruption_level", HighInterruptionLevel);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>("high_urgency", HighUrgency);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>("low_interruption_level", LowInterruptionLevel);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.PolicyFindingReadinessRuleV2>("low_urgency", LowUrgency);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

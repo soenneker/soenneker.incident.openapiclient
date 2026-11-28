@@ -32,6 +32,8 @@ namespace Soenneker.Incident.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The interruption level of the pages this rule applies to: high or low.</summary>
+        public global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePublicV2_interruption_level? InterruptionLevel { get; set; }
         /// <summary>The method_target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +52,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
 #else
         public global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePhoneDetailsPublicV2 Phone { get; set; }
 #endif
-        /// <summary>The urgency level this rule applies to</summary>
+        /// <summary>Deprecated: use interruption_level, which always has the same value.</summary>
         public global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePublicV2_rule_type? RuleType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePublicV2"/> and sets the default values.
@@ -80,6 +82,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
                 { "app", n => { App = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRuleAppDetailsPublicV2>(global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRuleAppDetailsPublicV2.CreateFromDiscriminatorValue); } },
                 { "delay_seconds", n => { DelaySeconds = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "interruption_level", n => { InterruptionLevel = n.GetEnumValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePublicV2_interruption_level>(); } },
                 { "method_target", n => { MethodTarget = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRuleMethodTargetPublicV2>(global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRuleMethodTargetPublicV2.CreateFromDiscriminatorValue); } },
                 { "method_type", n => { MethodType = n.GetEnumValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePublicV2_method_type>(); } },
                 { "phone", n => { Phone = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePhoneDetailsPublicV2>(global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePhoneDetailsPublicV2.CreateFromDiscriminatorValue); } },
@@ -96,6 +99,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRuleAppDetailsPublicV2>("app", App);
             writer.WriteLongValue("delay_seconds", DelaySeconds);
             writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePublicV2_interruption_level>("interruption_level", InterruptionLevel);
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRuleMethodTargetPublicV2>("method_target", MethodTarget);
             writer.WriteEnumValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePublicV2_method_type>("method_type", MethodType);
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.OnCallNotificationRulePhoneDetailsPublicV2>("phone", Phone);

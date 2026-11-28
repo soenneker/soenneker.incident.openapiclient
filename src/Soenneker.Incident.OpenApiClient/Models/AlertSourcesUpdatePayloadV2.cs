@@ -14,6 +14,14 @@ namespace Soenneker.Incident.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The alertmanager_options property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Incident.OpenApiClient.Models.AlertSourceAlertmanagerOptionsV2? AlertmanagerOptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Incident.OpenApiClient.Models.AlertSourceAlertmanagerOptionsV2 AlertmanagerOptions { get; set; }
+#endif
         /// <summary>Whether alerts from this source keep counting down to auto-resolve while attached to an incident. Defaults to true. Has no effect without auto_resolve_timeout_minutes.</summary>
         public bool? AutoResolveIncidentAlerts { get; set; }
         /// <summary>When set, alerts from this source will automatically resolve after this many minutes.</summary>
@@ -133,6 +141,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alertmanager_options", n => { AlertmanagerOptions = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.AlertSourceAlertmanagerOptionsV2>(global::Soenneker.Incident.OpenApiClient.Models.AlertSourceAlertmanagerOptionsV2.CreateFromDiscriminatorValue); } },
                 { "auto_resolve_incident_alerts", n => { AutoResolveIncidentAlerts = n.GetBoolValue(); } },
                 { "auto_resolve_timeout_minutes", n => { AutoResolveTimeoutMinutes = n.GetLongValue(); } },
                 { "azure_devops_options", n => { AzureDevopsOptions = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.AlertSourceAzureDevopsOptionsV2>(global::Soenneker.Incident.OpenApiClient.Models.AlertSourceAzureDevopsOptionsV2.CreateFromDiscriminatorValue); } },
@@ -156,6 +165,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.AlertSourceAlertmanagerOptionsV2>("alertmanager_options", AlertmanagerOptions);
             writer.WriteBoolValue("auto_resolve_incident_alerts", AutoResolveIncidentAlerts);
             writer.WriteLongValue("auto_resolve_timeout_minutes", AutoResolveTimeoutMinutes);
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.AlertSourceAzureDevopsOptionsV2>("azure_devops_options", AzureDevopsOptions);

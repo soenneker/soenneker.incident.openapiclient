@@ -73,10 +73,10 @@ namespace Soenneker.Incident.OpenApiClient.Models
         /// <summary>Set when policy_type is on_call_readiness. The assignee is always the user the finding is about and cannot be configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessV2? OnCallReadiness { get; set; }
+        public global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessPayloadV2? OnCallReadiness { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessV2 OnCallReadiness { get; set; }
+        public global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessPayloadV2 OnCallReadiness { get; set; }
 #endif
         /// <summary>Type of the policy, specifying what this applies to. Cannot be changed after the policy is created.</summary>
         public global::Soenneker.Incident.OpenApiClient.Models.PoliciesCreatePayloadV2_policy_type? PolicyType { get; set; }
@@ -130,7 +130,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
                 { "expressions", n => { Expressions = n.GetCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.ExpressionPayloadV2>(global::Soenneker.Incident.OpenApiClient.Models.ExpressionPayloadV2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "follow_up", n => { FollowUp = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyFollowUpPayloadV2>(global::Soenneker.Incident.OpenApiClient.Models.PolicyFollowUpPayloadV2.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "on_call_readiness", n => { OnCallReadiness = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessV2>(global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessV2.CreateFromDiscriminatorValue); } },
+                { "on_call_readiness", n => { OnCallReadiness = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessPayloadV2>(global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessPayloadV2.CreateFromDiscriminatorValue); } },
                 { "policy_type", n => { PolicyType = n.GetEnumValue<global::Soenneker.Incident.OpenApiClient.Models.PoliciesCreatePayloadV2_policy_type>(); } },
                 { "post_mortem", n => { PostMortem = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyPostMortemPayloadV2>(global::Soenneker.Incident.OpenApiClient.Models.PolicyPostMortemPayloadV2.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyScheduleV2>(global::Soenneker.Incident.OpenApiClient.Models.PolicyScheduleV2.CreateFromDiscriminatorValue); } },
@@ -151,7 +151,7 @@ namespace Soenneker.Incident.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Incident.OpenApiClient.Models.ExpressionPayloadV2>("expressions", Expressions);
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyFollowUpPayloadV2>("follow_up", FollowUp);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessV2>("on_call_readiness", OnCallReadiness);
+            writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyOnCallReadinessPayloadV2>("on_call_readiness", OnCallReadiness);
             writer.WriteEnumValue<global::Soenneker.Incident.OpenApiClient.Models.PoliciesCreatePayloadV2_policy_type>("policy_type", PolicyType);
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyPostMortemPayloadV2>("post_mortem", PostMortem);
             writer.WriteObjectValue<global::Soenneker.Incident.OpenApiClient.Models.PolicyScheduleV2>("schedule", Schedule);

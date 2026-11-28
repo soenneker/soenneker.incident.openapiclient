@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Incident.OpenApiClient.V3.Catalog_entries.Actions.Bulk_archive;
 using Soenneker.Incident.OpenApiClient.V3.Catalog_entries.Actions.Bulk_update;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Incident.OpenApiClient.V3.Catalog_entries.Actions
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActionsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bulk_archive property</summary>
+        public global::Soenneker.Incident.OpenApiClient.V3.Catalog_entries.Actions.Bulk_archive.Bulk_archiveRequestBuilder Bulk_archive
+        {
+            get => new global::Soenneker.Incident.OpenApiClient.V3.Catalog_entries.Actions.Bulk_archive.Bulk_archiveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The bulk_update property</summary>
         public global::Soenneker.Incident.OpenApiClient.V3.Catalog_entries.Actions.Bulk_update.Bulk_updateRequestBuilder Bulk_update
         {
